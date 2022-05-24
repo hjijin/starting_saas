@@ -28,7 +28,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -43,24 +43,46 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# This is a gem that includes a view helper and javascript helper to display relative time (i.e. ‘updated 2 minutes ago’)
+gem "local_time"
+gem "devise"
+gem "devise_invitable"
+gem "rolify"
+gem "cancancan"
+gem 'immutable-struct'
+gem 'sidekiq'
+gem 'sinatra', require: nil
+gem 'gravatar_image_tag'
+gem 'money-rails'
+gem 'slack-notifier'
+gem 'rack-cors', require: 'rack/cors'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'simplecov', :require => false, :group => :test
+  gem 'factory_bot_rails'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem 'listen', '>= 3.0.5', '< 3.2'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
-end
+  gem "spring"
 
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener'
+  gem 'foreman'
+end
